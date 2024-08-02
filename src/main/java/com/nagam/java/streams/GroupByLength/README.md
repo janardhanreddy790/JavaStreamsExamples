@@ -19,5 +19,10 @@ import java.util.stream.Collectors;
 
 public class GroupByLength {
     public static void main(String[] args) {
-        List<String> words =
+        List<String> words = Arrays.asList("one", "two", "three", "four", "five");
+        Map<Integer, List<String>> groupedByLength = words.stream()
+                .collect(Collectors.groupingBy(String::length));
+        System.out.println("Grouped by length: " + groupedByLength);
+    }
+}
 ```
